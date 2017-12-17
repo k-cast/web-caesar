@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from caesar import rotate_character
 
 app = Flask(__name__)
@@ -25,7 +25,15 @@ form = """<!DOCTYPE html>
         </style>
     </head>
     <body>
-      <-- create your form here -->
+    <form>
+       <form action="/add" method="post">
+        <label for="new-movie">
+            Rotate by
+            <input type="text" id="rot" name="rot"/>
+            
+        </label>
+        <input type="submit" value="Add It"/>
+    </form>
     </body>
 </html>"""
 
